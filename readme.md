@@ -6,7 +6,7 @@ for my blog.
 ## Compiling
 
 ```
-gcc main.c utils.c
+make blogpost
 ```
 
 ## How to use
