@@ -19,17 +19,14 @@ int main(int argc, char *argv[])
     }
 
     char *arg_title;
-    if (argv[1] != NULL || argv[1] != "")
+    if (argv[1] != NULL)
     {
         arg_title = argv[1];
     }
-
+    
+    printf("TEST PRINT");
     // Get our current time/date information.
     date curr_date = get_date();
-
-    // Format full date to yyyy-mm-dd
-    char date[15];
-    snprintf(date, sizeof(date), "%s-%s-%s", curr_date.year, curr_date.month, curr_date.day);
 
     // Save the original title.
     char arg_title_original[BUFFER_SIZE];
@@ -40,7 +37,7 @@ int main(int argc, char *argv[])
 
     // Concatenate to create the full title.
     char full_title[BUFFER_SIZE];
-    snprintf(full_title, sizeof(full_title), "%s-%s.md", date, arg_title);
+    snprintf(full_title, sizeof(full_title), "%s-%s.md", curr_date.formated_date, arg_title);
 
     char destination[BUFFER_SIZE];
     snprintf(destination, sizeof(destination), "/home/mathieu/Documents/mb-izzo.github.io/_posts/%s", full_title);

@@ -2,6 +2,7 @@ typedef struct {
     char *year;
     char *month;
     char *day;
+    char *formated_date;
 } date;
 
 char* replace_char(char *str, char find, char replace);
