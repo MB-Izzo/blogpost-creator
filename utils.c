@@ -45,7 +45,6 @@ char* get_formated_number(int nbr)
 
 date get_date()
 {
-    printf("TEST PRINT");
 
     time_t t = time(NULL);
     struct tm tm = *localtime(&t);
@@ -54,9 +53,8 @@ date get_date()
     char *month = get_formated_number(tm.tm_mon + 1);
     char *day = get_formated_number(tm.tm_mday);
 
-
-    char full_date[15];
-    snprintf(full_date, sizeof(full_date), "%s-%s-%s", year, month, day);
+    char *full_date = malloc(sizeof(char) * 15);
+    snprintf(full_date, sizeof(char) * 15, "%s-%s-%s", year, month, day);
 
     date curr_date = {year, month, day, full_date};
     return curr_date;

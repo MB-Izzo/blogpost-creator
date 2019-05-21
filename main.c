@@ -24,9 +24,9 @@ int main(int argc, char *argv[])
         arg_title = argv[1];
     }
     
-    printf("TEST PRINT");
     // Get our current time/date information.
     date curr_date = get_date();
+    printf("%s\n", curr_date.formated_date);
 
     // Save the original title.
     char arg_title_original[BUFFER_SIZE];
@@ -64,6 +64,6 @@ int main(int argc, char *argv[])
     free(curr_date.day);
     free(curr_date.year);
     free(curr_date.month);
-
+    free(curr_date.formated_date);
     return EXIT_SUCCESS;
 }

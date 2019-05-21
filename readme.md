@@ -3,6 +3,12 @@
 A small and simple tool to create a file with a title and date
 for my blog.
 
+## Compiling
+
+```
+gcc main.c utils.c
+```
+
 ## How to use
 
 ```
