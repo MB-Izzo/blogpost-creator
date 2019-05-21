@@ -9,7 +9,7 @@
 #include <errno.h>
 #include <unistd.h>
 
-#define BUFFER_SIZE 200
+#define BUFFER_SIZE 300
 
 char* replace_char(char *str, char find, char replace);
 void str_to_lower(char *str);
@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
     if (argc < 2)
     {
         fprintf(stderr, "Must give a title to the blog post!\n");
-        return 1;
+        return EXIT_FAILURE;
     }
 
     char *arg_title = NULL;
@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
     if (file == NULL)
     {
         fprintf(stderr, "Unable to create file - %s.\n", strerror(errno));
-        return 1;
+        return EXIT_FAILURE;
     }
 
     // Write title to file.
@@ -83,10 +83,10 @@ int main(int argc, char *argv[])
     if (execl("/snap/bin/code", "/snap/bin/code", destination, NULL) == -1)
     {
         fprintf(stderr, "Error launching vscode: %s", strerror(errno));
-        return 1;
+        return EXIT_FAILURE;
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }
 
 char* replace_char(char *str, char find, char replace)
@@ -124,5 +124,3 @@ char* get_formated_number(int nbr)
     }
     return str;
 }
-
-
