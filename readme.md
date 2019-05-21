@@ -12,7 +12,7 @@ gcc main.c utils.c
 ## How to use
 
 ```
-./blogpost "your blogpost name"
+./a.out "Your blogpost name"
 ```
 
 ## Current state
